@@ -1,0 +1,19 @@
+{% extends 'posts/layout.html' %}
+
+{% block content %}
+    <h1>{{ post.title }}</h1>
+
+    <div class="list-group">
+
+        <div>
+            {{post.body}}
+        </div>
+
+        <div>
+            {{post.created_at}}
+        </div>
+    </div>
+
+    <a class="btn btn-default" href="/posts">Go Back</a>
+{% endblock %}
+

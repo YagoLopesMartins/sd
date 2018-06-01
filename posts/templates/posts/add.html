@@ -1,0 +1,22 @@
+{% extends 'posts/layout.html' %}
+{% load rest_framework %}
+
+{% block content %}
+    <h1>{{ post.title }}</h1>
+
+    <div class="container">
+        <form class="form-horizontal" action="{% url 'add' %}" method="post">
+            {% csrf_token %}
+
+                <label for="title" class="col-sm-2 control-label">Title</label><br/>
+                    <input type="text" name="title" id="title" class="form-control"/>
+                    <br/>
+                <label for="body" class="col-sm-2 control-label">Body</label><br/>
+                    <textarea name="body" id="body" class="form-control" rows="3"></textarea>
+                    <br/><br/>
+                <input class="btn btn-lg btn-primary btn-block" type="submit" value="Submit"/>
+        </form>
+    </div>
+    <a class="btn btn-default" href="/posts">Go Back</a>
+{% endblock %}
+
